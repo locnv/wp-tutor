@@ -1,0 +1,15 @@
+/*
+Theme Name: shuttle child
+Theme URI: http://shuttle-shop.com/
+description: >-
+  Shuttle Child Theme
+Author: LocN
+Author URI: http://shuttle-shop.com
+Template: shuttle
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+Text Domain: shuttle-child
+*/
+@import url("../shuttle/style.css");
