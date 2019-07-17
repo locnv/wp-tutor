@@ -1,4 +1,5 @@
 download
 node_modules
 .idea
+.htaccess
 wp-content/uploads
