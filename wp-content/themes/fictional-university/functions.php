@@ -1,5 +1,41 @@
 <?php
 
+/**
+* @param $args array: title | subtitle
+*/
+function pageBanner($args = array()) { 
+
+	if (!array_key_exists('title', $args)) {
+		$args['title'] = get_the_title();
+	}
+
+	if(!array_key_exists('subtitle', $args)) {
+		$args['subtitle'] = get_field('page_banner_subtitle');
+	}
+
+	if (!array_key_exists('photo', $args)) {
+		if(get_field('page_banner_background_image')) {
+			$args['photo'] = get_field('page_banner_background_image')['sizes']['pageBanner'];	
+		} else {
+			$args['photo'] = get_theme_file_uri('/images/ocean.jpg');	
+		}
+	}
+
+	?>
+
+	<div class="page-banner">
+      <div class="page-banner__bg-image" style="background-image: url(<?php echo $args['photo']; ?> );"></div>
+      <div class="page-banner__content container container--narrow">
+        <h1 class="page-banner__title"><?php echo $args['title']; ?></h1>
+        <div class="page-banner__intro">
+          <p><?php echo $args['subtitle']; ?></p>
+        </div>
+      </div>  
+    </div>
+
+<?php
+}
+
 function university_adjust_queries($query) {
 
 	if(!is_admin() AND is_post_type_archive('program') AND $query->is_main_query) {
