@@ -1,4 +1,4 @@
-exports.themeLocation = './wp-content/themes/fictional-university-theme/';
+exports.themeLocation = './wp-content/themes/fictional-university/';
 exports.urlToPreview = 'http://localhost:8888/wp-tutor';
 //exports.urlToPreview = 'http://fictional-university.test';
 
