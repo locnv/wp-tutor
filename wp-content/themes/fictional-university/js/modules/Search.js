@@ -65,13 +65,13 @@ class Search {
 					<div class="one-third">
 						<h2 class="search-overlay__section-title">General Information</h2>
 						${results.generalInfo.length > 0 ? '<ul class="link-list min-list">' : '<p>No general information match search.</p>'}
-							${results.generalInfo.map(item => `<li><a href="${item.link}">${item.title}</a> ${item.postType === 'post' ? `<small>by <b>${item.authorName}</b></small>` : ''}</li>`).join('')}
+							${results.generalInfo.map(item => `<li><a href="${item.permalink}">${item.title}</a> ${item.postType === 'post' ? `<small>by <b>${item.authorName}</b></small>` : ''}</li>`).join('')}
 						${results.generalInfo.length > 0 ? '</ul>' : ''}
 					</div>
 					<div class="one-third">
 						<h2 class="search-overlay__section-title">Programs</h2>
 						${results.programs.length > 0 ? '<ul class="link-list min-list">' : `<p>No Programs match that search. <a href="${siteInfo.rootUrl}/programs">View all programs</a></p>`}
-							${results.programs.map(item => `<li><a href="${item.link}">${item.title}</a></li>`).join('')}
+							${results.programs.map(item => `<li><a href="${item.permalink}">${item.title}</a></li>`).join('')}
 						${results.programs.length > 0 ? '</ul>' : ''}
 
 						<h2 class="search-overlay__section-title">Professors</h2>
@@ -90,7 +90,7 @@ class Search {
 					<div class="one-third">
 						<h2 class="search-overlay__section-title">Campuses</h2>
 						${results.campuses.length > 0 ? '<ul class="link-list min-list">' : `<p>No Campuses match that search. <a href="${siteInfo.rootUrl}/campuses">View all campuses</a>.</p>`}
-							${results.campuses.map(item => `<li><a href="${item.link}">${item.title}</a></li>`).join('')}
+							${results.campuses.map(item => `<li><a href="${item.permalink}">${item.title}</a></li>`).join('')}
 						${results.campuses.length > 0 ? '</ul>' : ''}
 
 						<h2 class="search-overlay__section-title">Events</h2>
