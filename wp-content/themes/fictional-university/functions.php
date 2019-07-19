@@ -1,5 +1,20 @@
 <?php
 
+require get_theme_file_path('/inc/search-route.php');
+
+
+function university_custom_rest() {
+	// p1. Post type to customize
+	// p2. Property to be added
+	// p3. Handle
+	register_rest_field('post', 'autherName', array(
+		'get_callback' => function() { return get_the_author(); }
+	));
+
+}
+
+add_action('rest_api_init', 'university_custom_rest');
+
 /**
 * @param $args array: title | subtitle
 */
@@ -84,7 +99,7 @@ add_action('after_setup_theme', 'university_features');
 /* Scripts & Style */
 function university_files() {
 
-  //wp_enqueue_script('main-university-js', get_theme_file_uri('/js/scripts-bundled.js', array('jquery'), '1.0', true));
+  wp_enqueue_script('main-university-js', get_theme_file_uri('/js/scripts-bundled.js'), array('jquery'), microtime()/*'1.0'*/, true);
 
   //wp_deregister_script('jquery');
   //wp_register_script( 'jquery', '//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js');
@@ -94,6 +109,9 @@ function university_files() {
   wp_enqueue_style('google_font', '//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i');	
   wp_enqueue_style('font_aewsome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');	
   wp_enqueue_style('university_main_styles', get_stylesheet_uri());
+  wp_localize_script('main-university-js', 'siteInfo', array(
+  	'rootUrl' => get_site_url()
+  ));
 
 }
 
