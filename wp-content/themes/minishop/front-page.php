@@ -101,6 +101,17 @@
     	</div>   		
 	</div>
 
+	<!-- Test Latest Product -->
+	<div class="container">
+		<div class="row">
+			<?php 
+			$number = 12;
+			echo do_shortcode('[recent_products per_page="' . intval($number) . '" columns="3"]'); 
+			?>
+		</div>
+	</div>
+	<!-- Ending Of Test -->
+
 	<div class="container">
 		<div class="row">
 			<?php 
