@@ -1,10 +1,10 @@
-PostType:
+# PostType:
 	Event
 	Program
 	Professor
 	Campus
 
-CustomField:
+# CustomField:
 	Event Date
 		-> event
 	Main Body Content
@@ -19,3 +19,15 @@ CustomField:
 		-> Events -> Campus
 	Related Program
 		-> Events -> Programs
+
+#Relation ship direction
+
+Event -> Program(s)
+Program -> Campus(es)
+
+
+// Fallback Searach form for Browser with JS disabled.
+// Install Members plugins (User - Role)
+
+
+

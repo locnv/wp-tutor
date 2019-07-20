@@ -131,8 +131,11 @@ class Search {
 		this.searchOverlay.addClass('search-overlay--active');
 		$('body').addClass('body-no-scroll');
 		this.searchField.val('');
-		this.isOverlayOpen = true;
 		setTimeout(() => this.searchField.focus(), 301);
+		this.isOverlayOpen = true;
+
+		// Disable default behavior of the <a> tag
+		return false;
 		
 	}
 
