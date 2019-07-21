@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello world!</title>
+
+</head>
+<body>
+<div>
+  <h2>An JS introduction.</h2>
+
+  <p>
+  <label>A Text</label>
+  <span id="textHolder">Xin chao!</span>
+  </p>
+
+  <br/><br/><br/>
+  <p>
+  <label>A Input Text</label>
+  <input type="text" id="txtInput" placeholder="Enter something" />
+  <button onclick="clickOnButton()">Click me!</button>
+  </p>
+
+</div>
+
+<script type="text/javascript">
+  // Javascript world!
+
+  // Variables
+  var myDom = document.getElementById('textHolder');
+
+  // Javascript can change text of an element
+  myDom.innerHTML = 'Hello';
+
+  // Javascript can change css property
+  myDom.style.color = 'red';
+
+
+  function clickOnButton() {
+    var secondDom = document.getElementById('txtInput');
+    var value = secondDom.value;
+    alert(value);
+  }
+  
+</script>
+
+</body>
+</html>

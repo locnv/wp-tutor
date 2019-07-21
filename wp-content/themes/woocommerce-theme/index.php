@@ -1,0 +1,1 @@
+<h2>Woocommerce Theme development tutorial! <small>This page is powered by default template (index.php)</small></h2>

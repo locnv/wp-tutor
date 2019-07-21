@@ -3,3 +3,4 @@ node_modules
 .idea
 .htaccess
 wp-content/uploads
+wp-content/themes/woocommerce-theme/node_modules

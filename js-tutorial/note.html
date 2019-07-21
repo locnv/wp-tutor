@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello world!</title>
+
+  <style type="text/css">
+    .title {
+      width: 60%;
+      text-align: center;
+      color: green;
+    }
+    .title1 {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+    .one-third {
+      width: 30%;
+      float: left;
+      margin-right: 32px;
+    }
+    .two-third {
+      width: 60%;
+      float: left;
+    }
+    .inline-block {
+      display: block;
+    }
+    .txt-new-note {
+      width: 100%;
+      margin-bottom: 5px;
+      background: #f0f0f0;
+      height: 75px;
+    }
+    #btnAddNewNote {
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-weight: bold;
+      background: lightblue;
+      border: 2px solid chocolate;
+    }
+    #btnAddNewNote:hover {
+      background: blanchedalmond;
+      cursor: pointer;
+    }
+
+    #lstNote {
+      padding: 0;
+    }
+
+    #lstNote li:hover {
+      background: chocolate;
+    }
+    #lstNote li {
+      border: 1px solid gray;
+      border-radius: 5px;
+      margin-bottom: 4px;
+      padding: 5px 11px;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+      list-style-type: none;
+  }
+  </style>
+
+</head>
+<body>
+<div>
+  <h2 class="title">Notes Application.</h2>
+
+  <div class="new-note-container one-third">
+    <span class="inline-block title1">Enter your note below</span>
+    <textarea id="txtNewNote" class="inline-block txt-new-note" placeholder="Enter your note here."></textarea>
+    <button id="btnAddNewNote" onclick="addNewNote()">Add note</button>
+  </div>
+
+  <div class="note-list-container two-third">
+    <span class="inline-block title1">My notes</span>
+    <ul id="lstNote"></ul>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+  
+  function addNewNote() {
+
+    // Read user's input
+    var newNoteText = document.getElementById('txtNewNote').value;
+
+    if(newNoteText == '') {
+      alert('Opt. You did not enter anything!');
+      return;
+    }
+
+    // Get the reference to the notes list ul element
+    var ul = document.getElementById('lstNote');
+
+    // Create new li element and insert before the first element
+    var li = document.createElement('li');
+    li.appendChild(document.createTextNode(newNoteText));
+    ul.insertBefore(li, ul.childNodes[0]);
+
+    // Finally, clear current text.
+    document.getElementById('txtNewNote').value = '';
+    
+  }
+
+
+</script>
+
+</body>
+</html>

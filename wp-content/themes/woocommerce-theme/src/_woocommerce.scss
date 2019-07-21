@@ -1,0 +1,14 @@
+.woocommerce {
+
+	.woocommerce-input-wrapper {
+		width: 100%;
+		display: block;
+	}
+}
+
+.woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea {
+	padding: .25rem;
+	height: 30px;
+	border: 1px solid darken(#f0f0f0, 30%);
+    background: #f0f0f0;
+}

@@ -94,6 +94,23 @@ function university_post_type() {
 		// g Wordpress Dashicon
 		'menu_icon' => 'dashicons-welcome-write-blog'
 	));
+
+	// Note Post Type
+	register_post_type('like', array(
+		//'show_in_rest' => true, // Not to use default rest api, but rather than make completely custom rest api
+		'supports' => array('title'),
+		'public' => false,
+		'show_ui' => true,
+		'labels' => array(
+			'name' => 'Likes',
+			'add_new_item' => 'Add New Like',
+			'edit_item' => 'Edit Like',
+			'all_items' => 'All Likes',
+			'singular_name' => 'Like'
+		),
+		// g Wordpress Dashicon
+		'menu_icon' => 'dashicons-heart'
+	));
 }
 
 add_action('init', 'university_post_type');
