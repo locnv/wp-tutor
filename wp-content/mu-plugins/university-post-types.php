@@ -111,6 +111,57 @@ function university_post_type() {
 		// g Wordpress Dashicon
 		'menu_icon' => 'dashicons-heart'
 	));
+
+	// Word Post Type
+	register_post_type('word', array(
+		'show_in_rest' => true, // Not to use default rest api, but rather than make completely custom rest api
+		'supports' => array('title', 'editor'),
+		'public' => false,
+		'show_ui' => true,
+		'labels' => array(
+			'name' => 'Words',
+			'add_new_item' => 'Add New Word',
+			'edit_item' => 'Edit Word',
+			'all_items' => 'All Words',
+			'singular_name' => 'Word'
+		),
+		// g Wordpress Dashicon
+		'menu_icon' => 'dashicons-editor-paste-word'
+	));
+
+	// Word Post Type
+	register_post_type('topic', array(
+		//'show_in_rest' => true, // Not to use default rest api, but rather than make completely custom rest api
+		'supports' => array('title'),
+		'public' => false,
+		'show_ui' => true,
+		'labels' => array(
+			'name' => 'Topics',
+			'add_new_item' => 'Add New Topic',
+			'edit_item' => 'Edit Topic',
+			'all_items' => 'All Topics',
+			'singular_name' => 'Topic'
+		),
+		// g Wordpress Dashicon
+		'menu_icon' => 'dashicons-admin-site-alt'
+	));
+
+	// Word Post Type
+	register_post_type('topic_word', array(
+		//'show_in_rest' => true, // Not to use default rest api, but rather than make completely custom rest api
+		'supports' => array('title'),
+		'public' => false,
+		'show_ui' => true,
+		'labels' => array(
+			'name' => 'TopicWords',
+			'add_new_item' => 'Add New TopicWord',
+			'edit_item' => 'Edit TopicWord',
+			'all_items' => 'All TopicWords',
+			'singular_name' => 'TopicWord'
+		),
+		// g Wordpress Dashicon
+		'menu_icon' => 'dashicons-translation'
+	));
 }
 
 add_action('init', 'university_post_type');
